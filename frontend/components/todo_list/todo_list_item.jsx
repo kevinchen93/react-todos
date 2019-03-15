@@ -37,7 +37,7 @@ class TodoListItem extends Component {
             { done ? "Undo" : "Done" }
           </button>
         </div>
-        { detail }
+        { this.state.detail && <TodoDetailViewContainer todo={ todo } /> }
       </li>
     );
   }

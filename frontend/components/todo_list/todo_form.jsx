@@ -1,4 +1,4 @@
-import { uniqueId } from '../../util/id_generator'
+import { uniqueId } from '../../util/id_generator.js'
 import React, { Component } from 'react';
 
 import merge from 'lodash/merge';
@@ -16,7 +16,7 @@ class TodoForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const todo = merge({}, this.state, { id: uniqueId() });
+    const todo = { ...this.state, id: uniqueId() };
     this.props.receiveTodo(todo);
     this.setState({
       title: "",
@@ -36,6 +36,7 @@ class TodoForm extends Component {
             onChange={this.update('title')}
             required/>
         </label>
+        <br />
         <label>Body:
           <textarea
             className="input"
@@ -47,6 +48,7 @@ class TodoForm extends Component {
             onChange={this.update('body')}
             required></textarea>
         </label>
+        <br />
         <button className="create-button">Create Todo!</button>
       </form>
     );

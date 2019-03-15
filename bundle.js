@@ -226,13 +226,14 @@ var Root = function Root(_ref) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _util_id_generator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../util/id_generator */ "./frontend/util/id_generator.js");
-/* harmony import */ var _util_id_generator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_util_id_generator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _util_id_generator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../util/id_generator.js */ "./frontend/util/id_generator.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/merge */ "./node_modules/lodash/merge.js");
 /* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_merge__WEBPACK_IMPORTED_MODULE_2__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -288,8 +289,9 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_this), "handleSubmit", function (e) {
       e.preventDefault();
-      var todo = lodash_merge__WEBPACK_IMPORTED_MODULE_2___default()({}, _this.state, {
-        id: Object(_util_id_generator__WEBPACK_IMPORTED_MODULE_0__["uniqueId"])()
+
+      var todo = _objectSpread({}, _this.state, {
+        id: Object(_util_id_generator_js__WEBPACK_IMPORTED_MODULE_0__["uniqueId"])()
       });
 
       _this.props.receiveTodo(todo);
@@ -316,7 +318,7 @@ function (_Component) {
         placeholder: "buy milk",
         onChange: this.update('title'),
         required: true
-      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", null, "Body:", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("textarea", {
+      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", null, "Body:", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("textarea", {
         className: "input",
         ref: "body",
         cols: "20",
@@ -325,7 +327,7 @@ function (_Component) {
         placeholder: "2% or whatever is on sale!",
         onChange: this.update('body'),
         required: true
-      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
         className: "create-button"
       }, "Create Todo!"));
     }
@@ -545,7 +547,9 @@ function (_Component) {
       }, title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: done ? "done" : "undone",
         onClick: this.toggleTodo
-      }, done ? "Undo" : "Done")), detail);
+      }, done ? "Undo" : "Done")), this.state.detail && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TodoDetailViewContainer, {
+        todo: todo
+      }));
     }
   }]);
 
@@ -766,9 +770,12 @@ document.addEventListener('DOMContentLoaded', function () {
 /*!***************************************!*\
   !*** ./frontend/util/id_generator.js ***!
   \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: uniqueId */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "uniqueId", function() { return uniqueId; });
 function uniqueId() {
   return new Date().getTime();
 }
