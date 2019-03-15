@@ -3,12 +3,9 @@ import React, { Component } from 'react';
 import merge from 'lodash/merge';
 
 class TodoListItem extends Component {
-  constructor(props) {
-    super(props);
-    state = {
-      detail: false
-    };
-  }
+  state = {
+    detail: false
+  };
 
   toggleDetail = (e) => {
     e.preventDefault();
