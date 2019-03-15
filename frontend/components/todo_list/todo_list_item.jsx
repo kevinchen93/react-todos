@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import merge from 'lodash/merge';
 
+import TodoDetailViewContainer from './todo_detail_view_container';
+
 class TodoListItem extends Component {
   state = {
     detail: false

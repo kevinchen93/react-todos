@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import StepListItemContainer from './step_list_item_container';
-import StepForm from './step_form';
+import StepForm from './step_list_form';
 
 const StepList = ({ steps, todo_id, receiveStep }) => {
   const stepItems = steps.map(step => (
