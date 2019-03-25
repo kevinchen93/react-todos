@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+
 import StepListItem from './step_list_item';
 
 import { receiveStep, removeStep } from '../../actions/step_actions';

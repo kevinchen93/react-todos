@@ -182,7 +182,7 @@ __webpack_require__.r(__webpack_exports__);
 var App = function App() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "app"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Super Awesome Todo List"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_todo_list_todo_list_container_js__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "A Super Awesome Todo List"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_todo_list_todo_list_container_js__WEBPACK_IMPORTED_MODULE_1__["default"], null));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -352,8 +352,8 @@ function (_Component) {
     _defineProperty(_assertThisInitialized(_this), "state", {
       title: "",
       body: "",
-      done: false,
-      todo_id: _this.props.todo_id
+      todo_id: _this.props.todo_id,
+      done: false
     });
 
     _defineProperty(_assertThisInitialized(_this), "update", function (property) {
@@ -386,18 +386,18 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "step-form",
         onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Title:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Step", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "input",
         ref: "title",
         value: this.state.title,
-        placeholder: "walk to store",
+        placeholder: "check weather",
         onChange: this.update('title'),
         required: true
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Description:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Description", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "input",
         ref: "body",
         value: this.state.body,
-        placeholder: "google store directions",
+        placeholder: "pack essentials",
         onChange: this.update('body'),
         required: true
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -644,11 +644,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _util_id_generator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../util/id_generator.js */ "./frontend/util/id_generator.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/merge */ "./node_modules/lodash/merge.js");
-/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_merge__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _util_id_generator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../util/id_generator.js */ "./frontend/util/id_generator.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
@@ -670,7 +668,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -709,7 +706,7 @@ function (_Component) {
       e.preventDefault();
 
       var todo = _objectSpread({}, _this.state, {
-        id: Object(_util_id_generator_js__WEBPACK_IMPORTED_MODULE_0__["uniqueId"])()
+        id: Object(_util_id_generator_js__WEBPACK_IMPORTED_MODULE_1__["uniqueId"])()
       });
 
       _this.props.receiveTodo(todo);
@@ -726,33 +723,33 @@ function (_Component) {
   _createClass(TodoForm, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "todo-form",
         onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", null, "Title:", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Todo", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "input",
         ref: "title",
         value: this.state.title,
-        placeholder: "buy milk",
+        placeholder: "go on a hike",
         onChange: this.update('title'),
         required: true
-      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", null, "Body:", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("textarea", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Description", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
         className: "input",
         ref: "body",
         cols: "20",
         value: this.state.body,
         rows: "5",
-        placeholder: "2% or whatever is on sale!",
+        placeholder: "google directions and invite friends",
         onChange: this.update('body'),
         required: true
-      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "create-button"
       }, "Create Todo!"));
     }
   }]);
 
   return TodoForm;
-}(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 ;
 /* harmony default export */ __webpack_exports__["default"] = (TodoForm);

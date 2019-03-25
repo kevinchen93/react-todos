@@ -1,7 +1,6 @@
-import { uniqueId } from '../../util/id_generator.js'
 import React, { Component } from 'react';
 
-import merge from 'lodash/merge';
+import { uniqueId } from '../../util/id_generator.js'
 
 class TodoForm extends Component {
   state = {
@@ -27,28 +26,26 @@ class TodoForm extends Component {
   render() {
     return (
       <form className="todo-form" onSubmit={this.handleSubmit}>
-        <label>Title:
+        <label>Todo
           <input
             className="input"
             ref="title"
             value={this.state.title}
-            placeholder="buy milk"
+            placeholder="go on a hike"
             onChange={this.update('title')}
             required/>
         </label>
-        <br />
-        <label>Body:
+        <label>Description
           <textarea
             className="input"
             ref="body"
             cols='20'
             value={this.state.body}
             rows='5'
-            placeholder="2% or whatever is on sale!"
+            placeholder="google directions and invite friends"
             onChange={this.update('body')}
             required></textarea>
         </label>
-        <br />
         <button className="create-button">Create Todo!</button>
       </form>
     );

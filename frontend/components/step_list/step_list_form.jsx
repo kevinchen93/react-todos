@@ -6,8 +6,8 @@ class StepForm extends Component {
   state = {
     title: "",
     body: "",
-    done: false,
-    todo_id: this.props.todo_id
+    todo_id: this.props.todo_id,
+    done: false
   }
 
   update = (property) => {
@@ -27,22 +27,22 @@ class StepForm extends Component {
   render() {
     return (
       <form className="step-form" onSubmit={ this.handleSubmit }>
-        <label>Title:
+        <label>Step
           <input
             className="input"
             ref="title"
             value={ this.state.title }
-            placeholder="walk to store"
+            placeholder="check weather"
             onChange={ this.update('title') }
             required />
         </label>
         <br />
-        <label>Description:
+        <label>Description
           <input
             className="input"
             ref="body"
             value={ this.state.body }
-            placeholder="google store directions"
+            placeholder="pack essentials"
             onChange={ this.update('body') }
             required />
         </label>
